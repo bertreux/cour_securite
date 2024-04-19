@@ -1,0 +1,19 @@
+name: Semgrep Check
+
+on: [push]
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Semgrep
+      run: |
+        python3 -m pip install semgrep
+
+    - name: Run Semgrep
+      run: semgrep --config=p/python path/to/your/code
+
