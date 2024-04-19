@@ -15,5 +15,4 @@ jobs:
         python3 -m pip install semgrep
 
     - name: Run Semgrep
-      run: semgrep --config=p/python path/to/your/code
-
+      run: semgrep --config=p/python .
